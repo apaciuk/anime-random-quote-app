@@ -10,8 +10,11 @@
     <div class="quote-author">
   {{ quote.character }}
     </div>
+ </div>
+ <div class="button">
+<Button />
 </div>
-  </section>
+</section>
 </template>
 
 <script>
@@ -21,11 +24,13 @@ props: ['quote']
 </script>
 
 <style lang="scss" scoped>
+ 
 .quote {
     position: relative;
     margin: 0 auto;
     padding: 32px;
     max-width: 720px;
+    margin-bottom: 220px;
 
     &-content {
         position: relative;
@@ -43,7 +48,10 @@ props: ['quote']
             margin: 0px 2px;
 
         }
+   
+   
     }
+
 
     &-info {
       position: absolute;

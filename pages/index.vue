@@ -2,6 +2,8 @@
 <div class="app">
 <Header title="The Anime Quoter" />
 <Quote :quote="quote" />
+
+<Footer />
 </div>
 
 </template>
@@ -19,23 +21,23 @@ export default {
         }
     },
     methods: {
-       getQuote() {
-      const data =  fetch('https://animechan.vercel.app/api/random')
-        .then(res => res.json());
+      async fetchQuote() {
+      const data = await fetch(
+        'https://animechan.vercel.app/api/random'
+      ).then(res => res.json())
          console.log(data);
-      
-
-          //this.quote = {
-           // content: data.quote,
-           // anime: data.anime,
-           // character: data.character
-        //}
-      },
-    created () {
-        this.getQuote();
+         this.quote = {
+         content: data.quote,
+            anime: data.anime,
+         character: data.character
+        }
     }
+},
+    created () {
+        this.fetchQuote();
     }
 }
+
 </script>
 
 <style lang="scss">
@@ -54,4 +56,20 @@ padding:0;
 box-sizing: border-box;
 font-family: 'Fira Sans', sans-serif;
 }
+.button {
+margin-top:20px;
+margin-left:-30px; 
+}
+.button #button {
+   border-radius:20px; 
+   padding: 10px 14px;
+          font-size: 24px;
+          font-weight: 600;
+          color: var(--light);
+          text-align:center;
+    background: #ce19a1; 
+    border-color: #ce19a1; 
+     
+}
 </style>
+

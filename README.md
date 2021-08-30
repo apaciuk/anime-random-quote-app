@@ -1,5 +1,9 @@
 # vue-quote-app
 
+Anime quotes from anime api.
+
+Refresh Browser
+
 ## Build Setup
 
 ```bash
@@ -15,6 +19,10 @@ $ npm run start
 
 # generate static project
 $ npm run generate
+
+# Todo
+
+Fix refresh button
 ```
 
 For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
